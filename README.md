@@ -11,6 +11,8 @@
   hog (its **specialty**, **weight**, **greased**, and **highest medal
   achieved**)
 - Allow the user to _filter_ the hogs that are **greased**
+  - *hint:* The test is expecting a checkbox with an associated label. For this you will
+   need to use the htmlFor property.
 - Allow the user to _sort_ the hogs based on **name** or **weight**
 
 - Allow users to _hide_ hogs (not delete them, just hide them from view!)

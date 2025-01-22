@@ -24,4 +24,18 @@ describe("Hog App", () => {
     expect(screen.getByText(hogs[index].greased ? "Greased" : "Nongreased")).toBeInTheDocument();
     expect(screen.getByText(hogs[index]["highest medal achieved"])).toBeInTheDocument();
   });
+
+  it("filters hogs by greased status", () => {
+    render(<App />);
+    const filterCheckbox = screen.getByLabelText("Greased Pigs Only?");
+    fireEvent.click(filterCheckbox);
+
+    hogs.filter((hog) => hog.greased).forEach((hog) => {
+      expect(screen.getByText(hog.name)).toBeInTheDocument();
+    });
+
+    hogs.filter((hog) => !hog.greased).forEach((hog) => {
+      expect(screen.queryByText(hog.name)).not.toBeInTheDocument();
+    });
+  });
 });

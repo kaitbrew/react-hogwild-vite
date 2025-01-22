@@ -33,10 +33,11 @@ function Filter({
 					</select>
 				</div>
 				<div className="ui item">
-					<label>Greased Pigs Only?</label>
+					<label htmlFor='filter-greased'>Greased Pigs Only?</label>
 				</div>
 				<div className="ui item">
 					<input
+						id="filter-greased"
 						className="ui toggle checkbox"
 						checked={showGreased}
 						onChange={handleToggleGreased}
