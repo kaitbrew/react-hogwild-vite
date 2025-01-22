@@ -4,7 +4,7 @@ import piggy from "../assets/porco.png";
 const Nav = () => {
   return (
     <div className="navWrapper">
-      <span className="headerText">Hogwarts</span>
+      <span className="headerText">Hogwild</span>
       <div className="TwirlyPig">
         <img src={piggy} className="App-logo" alt="piggy" />
       </div>
