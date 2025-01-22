@@ -16,9 +16,9 @@ function HogCard({ hog }) {
   const { name, specialty, image } = hog;
 
   return (
-    <div className="ui card eight wide column pigTile">
+    <div aria-label="hog card" className="ui card eight wide column pigTile" onClick={handleDetailsClick}>
       <div className="image">
-        <img src={image} alt="hogPic" />
+        <img src={image} alt={`Photo of ${name}`} />
       </div>
       <div className="content">
         <h3 className="header">{name}</h3>
@@ -26,10 +26,7 @@ function HogCard({ hog }) {
       </div>
       <div className="extra content">
         {showDetails ? <HogDetails hog={hog} /> : null}
-
-        <button className="ui button" onClick={handleDetailsClick}>
-          {showDetails ? "Less Info" : "More Info"}
-        </button>
+        
         <button className="ui button" onClick={() => setIsHidden(true)}>
           Hide Me{" "}
           <span role="img" aria-label="snout">

@@ -13,10 +13,16 @@
 - Allow the user to _filter_ the hogs that are **greased**
 - Allow the user to _sort_ the hogs based on **name** or **weight**
 
-- BONUS: Allow users to _hide_ hogs (not delete them, just hide them from view!)
-- BONUS: Add a form to allow users to _add_ new hogs to the page
-- BONUS: Implement [Semantic Cards](https://semantic-ui.com/views/card.html) for
-  each hog
+- Allow users to _hide_ hogs (not delete them, just hide them from view!)
+- Add a form to allow users to _add_ new hogs to the page
+- Implement [Semantic Cards](https://semantic-ui.com/views/card.html) for
+  each hog. Each hog card wrapping element (such as a div) will need to be given 
+  an aria-label of "hog card" to be recognized by the test suite. Example below:
+  ```javascript
+    <div aria-label="hog card" className="semantic ui classes go here">
+      // Hog Card elements here
+    </div>
+  ```
 
 ## Project Guidelines
 
