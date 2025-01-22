@@ -71,4 +71,33 @@ describe("Hog App", () => {
 
     expect(screen.queryByText(sortedHogsByName[0].name)).not.toBeInTheDocument();
   });
+
+  it("adds a new hog via the form", () => {
+    render(<App />);
+    const nameInput = screen.getByLabelText("Name:");
+    const weightInput = screen.getByLabelText("Weight:");
+    const specialtyInput = screen.getByLabelText("Specialty:");
+    const greasedCheckbox = screen.getByLabelText("Greased?");
+    const addButton = screen.getByText("Add Hog");
+
+    fireEvent.change(nameInput, { target: { value: "New Hog" } });
+    fireEvent.change(weightInput, { target: { value: 100 } });
+    fireEvent.change(specialtyInput, { target: { value: "Dancing" } });
+    fireEvent.click(greasedCheckbox);
+    fireEvent.click(addButton);
+
+    expect(screen.getByText("New Hog")).toBeInTheDocument();
+  });
+
+  it("renders hog tiles using Semantic Cards", () => {
+    render(<App />);
+    const cards = screen.getAllByLabelText(/hog card/i)
+    
+    cards.forEach((card) => {
+        expect(card).toHaveClass("ui");
+        expect(card).toHaveClass("card");
+    });
+
+    expect(cards.length).toBe(hogs.length);
+  });
 });
