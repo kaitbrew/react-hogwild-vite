@@ -1,5 +1,3 @@
-import React from 'react'
-
 function HogDetails({ hog }) {
   const { greased, weight, "highest medal achieved": medal } = hog
   return (
