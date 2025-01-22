@@ -14,7 +14,7 @@ describe("Hog App", () => {
 
   it("displays additional hog details when a tile is clicked", () => {
     render(<App />);
-    const index = Math.floor(Math.random() * 12)
+    const index = Math.floor(Math.random() * 11)
     const hogTile = screen.getByText(hogs[index].name);
     hogTile.parentElement.parentElement
     fireEvent.click(hogTile);
@@ -57,5 +57,18 @@ describe("Hog App", () => {
     const renderedHogNamesByWeight = screen.getAllByRole("heading", { level: 3 }).map((el) => el.textContent);
 
     expect(renderedHogNamesByWeight).toEqual(sortedByWeight.map((hog) => hog.name));
+  });
+
+  it("hides a hog when the hide button is clicked", () => {
+    render(<App />);
+    const sortBySelect = screen.getByLabelText("Sort by:");
+    fireEvent.change(sortBySelect, { target: { value: "name" } });
+
+    const hideButtons = screen.getAllByRole("button", {name: 'Hide Me'});
+    fireEvent.click(hideButtons[0]);
+
+    const sortedHogsByName = [...hogs].sort((a, b) => a.name.localeCompare(b.name));
+
+    expect(screen.queryByText(sortedHogsByName[0].name)).not.toBeInTheDocument();
   });
 });

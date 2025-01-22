@@ -26,12 +26,9 @@ function HogCard({ hog }) {
       </div>
       <div className="extra content">
         {showDetails ? <HogDetails hog={hog} /> : null}
-        
+
         <button className="ui button" onClick={() => setIsHidden(true)}>
-          Hide Me{" "}
-          <span role="img" aria-label="snout">
-            🐽
-          </span>
+          Hide Me
         </button>
       </div>
     </div>

@@ -15,7 +15,8 @@
    need to use the htmlFor property.
 - Allow the user to _sort_ the hogs based on **name** or **weight**
 
-- Allow users to _hide_ hogs (not delete them, just hide them from view!)
+- Create a button with "Hide Me" as the text for each hog card to allow users to _hide_ 
+hogs (not delete them, just hide them from view!)
 - Add a form to allow users to _add_ new hogs to the page
 - Implement [Semantic Cards](https://semantic-ui.com/views/card.html) for
   each hog. Each hog card wrapping element (such as a div) will need to be given 
