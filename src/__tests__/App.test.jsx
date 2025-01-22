@@ -38,4 +38,24 @@ describe("Hog App", () => {
       expect(screen.queryByText(hog.name)).not.toBeInTheDocument();
     });
   });
+
+  it("sorts hogs by name or weight", () => {
+    render(<App />);
+
+    const sortBySelect = screen.getByLabelText("Sort by:");
+    
+    fireEvent.change(sortBySelect, { target: { value: "name" } });
+
+    const sortedByName = [...hogs].sort((a, b) => a.name.localeCompare(b.name));
+    const renderedHogNamesByName = screen.getAllByRole("heading", { level: 3 }).map((el) => el.textContent);
+
+    expect(renderedHogNamesByName).toEqual(sortedByName.map((hog) => hog.name));
+
+    fireEvent.change(sortBySelect, { target: { value: "weight" } });
+
+    const sortedByWeight = [...hogs].sort((a, b) => a.weight - b.weight);
+    const renderedHogNamesByWeight = screen.getAllByRole("heading", { level: 3 }).map((el) => el.textContent);
+
+    expect(renderedHogNamesByWeight).toEqual(sortedByWeight.map((hog) => hog.name));
+  });
 });

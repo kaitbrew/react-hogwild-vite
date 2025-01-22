@@ -19,10 +19,11 @@ function Filter({
 		<div className="filterWrapper">
 			<div className="ui menu">
 				<div className="ui item">
-					<label>Sort by </label>
+					<label htmlFor='sort-by-name-or-weight'>Sort by:</label>
 				</div>
 				<div className="ui item">
 					<select
+						id="sort-by-name-or-weight"
 						className="ui selection dropdown"
 						name="sort"
 						onChange={handleChangeSortBy}

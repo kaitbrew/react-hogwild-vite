@@ -6,7 +6,7 @@
 
 - _When the app first loads_, display a tile for each hog in the
   `porker_data.js` file. In the tile, display the **name** and **image** for
-  each hog. Use the images in the `assets` folder.
+  each hog. The name should be in an h3 tag.
 - _When the user clicks on the hog tile_, display the other details about the
   hog (its **specialty**, **weight**, **greased**, and **highest medal
   achieved**)
