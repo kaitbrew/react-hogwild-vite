@@ -1,6 +1,17 @@
-# Hogwarts: The React app for fans of prize-winning pigs
+# Hogwild: The React app for fans of prize-winning pigs
 
-## React Week 1 Project
+## Instructions
+- To run the lab:
+```bash
+npm install
+npm run dev
+```
+- To run the test suite:
+```bash
+npm run test
+```
+- Use the test suite and deliverables below to complete this lab. Be sure not just to 
+pass the tests, but check the desired functionality is working in browser
 
 ## Deliverables
 
@@ -18,6 +29,7 @@
 - Create a button with "Hide Me" as the text for each hog card to allow users to _hide_ 
 hogs (not delete them, just hide them from view!)
 - Add a form to allow users to _add_ new hogs to the page
+  - *hint:* The form test also looks for labels, so you'll need htmlFor again.
 - Implement [Semantic Cards](https://semantic-ui.com/views/card.html) for
   each hog. Each hog card wrapping element (such as a div) will need to be given 
   an aria-label of "hog card" to be recognized by the test suite. Example below:
@@ -44,9 +56,8 @@ hogs (not delete them, just hide them from view!)
 
 ## Trying to figure out where to start?
 
-There are lots of ways to build this project, and while some ways are better
-than others, there is no 'right' way! Start by wireframing what you want the app
-to look like and breaking it up into components.
+Start by wireframing what you want the app to look like and breaking it up into 
+components.
 
 Once you've decided on your components, use the MVP (minimum viable product)
 approach. What's the simplest thing we can render to the page? Perhaps a
@@ -57,6 +68,11 @@ store in state and where that state should be stored. How can a child component
 pass information up to its parent component? Think about what needs to happen
 upon each index rerender. What if a user filters out un-greased pigs, and then
 wants the remaining pigs sorted by weight?
+
+The test suites will look for specific wording in labels or naming of html element
+attributes. You can take a peek in the test files in you're unsure why the test is 
+not passing but your code looks right in browser. It could be you have an extra space, 
+capitalization is different, or are missing some punctuation.
 
 Be sure to use good programming practices, such as clear variable names and
 single responsibility functions. React apps can quickly become tangled and hard
